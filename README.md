@@ -52,8 +52,8 @@ Contributions to the code samples (e.g., fixing bugs in the live demo) are welco
 
 #### Code and Demos
 
-The source code in this repository is licensed under the **MIT License**. 
+The source code in this repository is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
 
 #### Presentation Materials (Slides)
 
-© 2026 Thomas Hauptvogel / Otto Group one.O. **All Rights Reserved.** The presentation slides, diagrams, and specific talk content may not be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author.
+© 2026 Otto Group one.O / Thomas Hauptvogel. **All Rights Reserved.** The presentation slides, diagrams, and specific talk content may not be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright holders. See [slides/README.md](slides/README.md) for details.
