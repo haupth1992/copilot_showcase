@@ -1,0 +1,22 @@
+{
+  "name": "ai-assisted-coding-toolset",
+  "version": "1.0.0",
+  "description": "Examples and slides for GitHub Copilot usage showcasing Agent & MCP features",
+  "scripts": {
+    "build": "marp slides/copilot-showcase.md --output dist/copilot-showcase.html --allow-local-files",
+    "build:html": "marp slides/copilot-showcase.md --output dist/copilot-showcase.html --html --allow-local-files",
+    "build:pdf": "marp slides/copilot-showcase.md --output dist/copilot-showcase.pdf --pdf --allow-local-files",
+    "watch": "marp slides/copilot-showcase.md --output dist/copilot-showcase.html --watch --allow-local-files"
+  },
+  "keywords": [
+    "marp",
+    "presentation",
+    "github-copilot",
+    "ai-assisted-coding"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.0.0"
+  }
+}
