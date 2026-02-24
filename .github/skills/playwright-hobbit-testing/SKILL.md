@@ -216,10 +216,9 @@ test('dashboard works on mobile (for traveling hobbits)', async ({ page }) => {
 
 ### Pattern: Wait for Navigation
 ```typescript
-await Promise.all([
-  page.waitForNavigation(),
-  page.click('a[href="/fellowship"]')
-])
+// Click and then assert the new URL (modern Playwright pattern)
+await page.click('a[href="/fellowship"]')
+await page.waitForURL(/\/fellowship/)
 ```
 
 ### Pattern: Check Element Exists
@@ -293,7 +292,7 @@ npm run test:e2e -- --debug
 npm run test:e2e -- --reporter=html
 ```
 
-## Playground MCP Integration
+## Playwright MCP Integration
 
 This repository includes Playwright MCP server for browser automation:
 - Navigate pages programmatically

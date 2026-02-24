@@ -74,19 +74,21 @@ Use this skill when you need to:
 ```
 
 ### Example 2: Code Slide with Syntax Highlighting
-```markdown
+~~~markdown
 ---
 
 ## GitHub Copilot Agent Example
 
 ```typescript
-// Ask Copilot to create a REST API endpoint
-@app.route('/api/adventures', methods=['GET'])
-async function getAdventures() {
-  const adventures = await db.query('SELECT * FROM quests WHERE status = ?', ['active'])
-  return { data: adventures, count: adventures.length }
+// Ask Copilot to generate a data access function
+async function getActiveQuests(): Promise<Quest[]> {
+  const quests = await db.query<Quest>(
+    'SELECT * FROM quests WHERE status = ?',
+    ['active']
+  )
+  return quests
 }
-\`\`\`
+```
 
 **Key Features:**
 - Auto-completion as you type
@@ -94,7 +96,7 @@ async function getAdventures() {
 - Full function generation
 
 ---
-```
+~~~
 
 ### Example 3: Two-Column Layout (Image + Content)
 ```markdown
@@ -289,17 +291,17 @@ If using the MARP MCP server, available commands:
 ## Export and Preview
 
 ```bash
-# Export to HTML
-marp copilot-showcase.md -o copilot-showcase.html
+# Export to HTML (from repository root)
+npm run build:html
 
 # Export to PDF
-marp copilot-showcase.md --pdf
+npm run build:pdf
 
 # Watch mode with live preview
-marp -w copilot-showcase.md
+npm run watch
 
-# Export with custom theme
-marp --theme custom-theme.css copilot-showcase.md
+# Or use marp CLI directly
+npx @marp-team/marp-cli slides/copilot-showcase.md -o output.html --allow-local-files
 ```
 
 ## Color Palette Reference

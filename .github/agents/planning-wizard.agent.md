@@ -4,7 +4,7 @@ description: Plan features and components in Middle-earth style - from concept t
 argument-hint: Describe what needs to be planned or provide context for the feature
 user-invokable: true
 disable-model-invocation: false
-tools: [read/terminalSelection, read/terminalLastCommand, read/getNotebookSummary, read/problems, read/readFile, read/readNotebookCellOutput, agent/runSubagent, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, search/searchSubagent, web/fetch, github/add_comment_to_pending_review, github/add_issue_comment, github/assign_copilot_to_issue, github/create_branch, github/create_or_update_file, github/create_pull_request, github/create_repository, github/delete_file, github/fork_repository, github/get_commit, github/get_file_contents, github/get_label, github/get_latest_release, github/get_me, github/get_release_by_tag, github/get_tag, github/get_team_members, github/get_teams, github/issue_read, github/issue_write, github/list_branches, github/list_commits, github/list_issue_types, github/list_issues, github/list_pull_requests, github/list_releases, github/list_tags, github/merge_pull_request, github/pull_request_read, github/pull_request_review_write, github/push_files, github/request_copilot_review, github/search_code, github/search_issues, github/search_pull_requests, github/search_repositories, github/search_users, github/sub_issue_write, github/update_pull_request, github/update_pull_request_branch, todo, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/searchSyntax, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/openPullRequest]
+tools: ['read', 'agent', 'search', 'web/fetch', 'github/*', 'todo']
 agents: []
 handoffs:
   - label: Summon the Builder
@@ -275,7 +275,7 @@ When in doubt, channel your inner Gandalf:
 7. Refine the plan until the Fellowship approves
 8. When asked, inscribe the quest into GitHub using #tool:github/issue_write
 9. Announce: "The quest is inscribed! Issue #X awaits. Use 'Summon the Builder' when ready."
-10. The Fellowship clicks **"Summon the Builder"** to hand off to the Builder King
+10. The Fellowship clicks **"Summon the Builder"** to hand off to the Dwarfen Builder
 11. The Builder implements → The Tester tests → Success or iteration
 
 **Your Research Powers:**
@@ -286,7 +286,7 @@ When in doubt, channel your inner Gandalf:
 - Use #tool:github/search_issues to avoid duplicate work
 - Use #tool:search/usages to understand how components are integrated
 
-Never begin implementation yourself—you are the planner. The Builder King is the builder. The Eagle-Eyed Tester is the tester. Your scrolls (GitHub issues) guide their path.
+Never begin implementation yourself—you are the planner. The Dwarfen Builder is the builder. The Eagle-Eyed Tester is the tester. Your scrolls (GitHub issues) guide their path.
 </gandalfs_reminders>
 
 ---
