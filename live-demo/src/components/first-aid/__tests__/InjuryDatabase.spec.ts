@@ -35,10 +35,10 @@ describe('InjuryDatabase', () => {
     expect(wrapper.find('.page-title').text()).toContain('Elvish First Aid Guide')
   })
 
-  it('renders all 10 injuries by default', async () => {
+  it('renders all 15 injuries by default', async () => {
     const wrapper = mountComponent()
     await router.isReady()
-    expect(wrapper.findAll('.injury-card')).toHaveLength(10)
+    expect(wrapper.findAll('.injury-card')).toHaveLength(15)
   })
 
   it('filters injuries by severity when a filter pill is clicked', async () => {
@@ -46,14 +46,15 @@ describe('InjuryDatabase', () => {
     await router.isReady()
     const criticalPill = wrapper.findAll('.filter-pill').find((p) => p.text().includes('Critical'))
     await criticalPill?.trigger('click')
-    // 3 critical injuries: morgul-wound, shelob-bite, dragon-fire
-    expect(wrapper.findAll('.injury-card')).toHaveLength(3)
+    // 5 critical injuries: morgul-wound, shelob-bite, dragon-fire, balrog-scorch, fell-beast-talon
+    expect(wrapper.findAll('.injury-card')).toHaveLength(5)
   })
 
   it('filters injuries by search query matching name', async () => {
     const wrapper = mountComponent()
     await router.isReady()
-    await wrapper.find('.search-input').setValue('morgul')
+    // 'morgul blade' is unique to the Morgul Blade Wound name
+    await wrapper.find('.search-input').setValue('morgul blade')
     expect(wrapper.findAll('.injury-card')).toHaveLength(1)
     expect(wrapper.find('.injury-name').text()).toBe('Morgul Blade Wound')
   })
@@ -77,7 +78,7 @@ describe('InjuryDatabase', () => {
   it('shows results count text', async () => {
     const wrapper = mountComponent()
     await router.isReady()
-    expect(wrapper.find('.results-count').text()).toContain('10 injuries found')
+    expect(wrapper.find('.results-count').text()).toContain('15 injuries found')
   })
 
   it('shows singular "injury" when exactly one result', async () => {
@@ -120,7 +121,8 @@ describe('InjuryDatabase', () => {
     const wrapper = mountComponent()
     await router.isReady()
     const pills = wrapper.findAll('.filter-pill')
-    expect(pills).toHaveLength(5) // all, critical, serious, moderate, mild
+    // 5 severity pills + 7 culture pills = 12 total
+    expect(pills).toHaveLength(12)
   })
 
   it('marks the active filter pill with the active class', async () => {
