@@ -35,7 +35,7 @@ const routeOptions: RouteOption[] = [
     type: 'Fastest',
     icon: '⚡',
     label: 'Fastest',
-    description: 'Prefers roads, optimises for speed',
+    description: 'Prefers roads, optimizes for speed',
   },
   {
     type: 'Scenic',
